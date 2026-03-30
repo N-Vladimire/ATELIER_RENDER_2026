@@ -10,6 +10,14 @@ def home():
 @app.route("/health")
 def health():
     return {"status": "Tout est ok ou pas"}
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
+@app.route("/env")
+def env():
+    return {"env": os.getenv("ENV")}
+
 @app.route("/info")
 def info():
     return {
@@ -17,9 +25,3 @@ def info():
         "student": "vlad",
         "version": "v2"
     }
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 10000))
-    app.run(host="0.0.0.0", port=port)
-@app.route("/env")
-def env():
-    return {"env": os.getenv("ENV")}
