@@ -14,8 +14,8 @@ def health():
 def info():
     return {
         "app": "Flask Render",
-        "student": "TON_NOM",
-        "version": "v1"
+        "student": "vlad",
+        "version": "v2"
     }
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
